@@ -1,0 +1,14 @@
+# Netlify configuration for the Lily love-book.
+#
+# The static site is published from public/. The API runs as a Netlify
+# Function (netlify/functions/api.mjs). The photo originals in private/photos/
+# are never published as static files; they only ship inside the function
+# bundle via included_files and stay behind the album code.
+
+[build]
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["private/photos/**"]
