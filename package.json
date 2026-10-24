@@ -1,0 +1,13 @@
+{
+  "name": "lily-love-book",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A private, German-language love-letter and photo-book website for Lily.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
