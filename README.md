@@ -12,6 +12,18 @@ npm start
 
 Die App läuft standardmäßig auf `http://localhost:4173`. Ein anderer Port kann über `PORT` gesetzt werden.
 
+## Auf Netlify veröffentlichen
+
+Das Projekt enthält bereits eine vollständige Netlify-Konfiguration — einfach das Repository in Netlify verbinden, mehr ist nicht nötig (keine Build-Anweisung):
+
+- `netlify.toml` veröffentlicht den `public/`-Ordner und bündelt die Fotos aus `private/photos/` ausschließlich in die Funktion — sie werden nie als statische Dateien veröffentlicht.
+- `netlify/functions/api.mjs` bildet die gesamte API ab (`/api/status`, `/api/unlock`, `/api/book-unlock`, `/api/photos`, `/api/photos/:id`) mit denselben Meldungen wie `server.js`.
+- Die Sitzung läuft über ein signiertes Token (HttpOnly-Cookie plus Ticket-Parameter als Fallback), damit sie auch serverlos zuverlässig funktioniert.
+
+Optionale Umgebungsvariablen `ACCESS_CODE`, `ALBUM_CODE` und `TOKEN_SECRET` können die Standardwerte überschreiben — bitte in der Netlify-Oberfläche setzen, nicht in `netlify.toml` (Werte dort erreichen die Funktion zur Laufzeit nicht).
+
+Lokal testen: `netlify dev` für die Netlify-Variante oder `npm start` für den eigenen Node-Server.
+
 ## Code-Stufen
 
 Die Start- und Album-Codes werden serverseitig geprüft und im Website-Interface nicht angezeigt. Die Standardwerte lassen sich in `server.js` ansehen oder mit `ACCESS_CODE` und `ALBUM_CODE` überschreiben.
