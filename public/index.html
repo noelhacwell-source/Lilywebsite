@@ -33,7 +33,7 @@
       <form id="gate-form" class="code-form" autocomplete="off">
         <label for="access-code">Gib den Code ein</label>
         <div class="input-wrap">
-          <input id="access-code" name="code" type="text" inputmode="text" maxlength="20" placeholder="Dein Code" autocomplete="one-time-code" aria-describedby="gate-error" required>
+          <input id="access-code" type="text" inputmode="text" maxlength="20" placeholder="Dein Code" autocomplete="off" aria-describedby="gate-error" required>
           <span class="input-heart" aria-hidden="true">♡</span>
         </div>
         <button class="button button-primary gate-submit" type="submit">
@@ -180,7 +180,7 @@
       <form id="book-form" class="code-form modal-form" autocomplete="off">
         <label for="book-code">Dein Codewort</label>
         <div class="input-wrap">
-          <input id="book-code" name="code" type="text" maxlength="30" placeholder="Codewort eingeben" autocomplete="off" aria-describedby="book-error" required>
+          <input id="book-code" type="text" maxlength="30" placeholder="Codewort eingeben" autocomplete="off" aria-describedby="book-error" required>
           <span class="input-heart" aria-hidden="true">♡</span>
         </div>
         <button id="book-submit" class="button button-primary" type="submit"><span>Album öffnen</span><span aria-hidden="true">→</span></button>
